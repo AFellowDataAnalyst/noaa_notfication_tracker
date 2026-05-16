@@ -1,4 +1,4 @@
-name: NAO Monitor
+name: noaanoti
 on:
   workflow_dispatch:
 
