@@ -1,7 +1,9 @@
 name: noaanoti
 on:
   workflow_dispatch:
-
+  
+permissions:
+  contents: write
 jobs:
   check:
     runs-on: ubuntu-latest
