@@ -1,0 +1,29 @@
+name: NAO Monitor
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Noaa notification tracker
+        run: |
+         alerts=$(curl -s -H "User-Agent: your-weather-bot" "https://api.weather.gov/alerts/active?area=LA")
+         current1=$(cat slot1.txt)
+
+         find1=$(echo "$alerts" | jq ".features[0].id //empty")
+         message1=$(echo "$alerts" | jq -r ".features[0].properties.headline //empty")
+
+         if [ -n "$find1" ]; then
+
+           if [ "$find1" != "$current1" ]; then
+             curl -d "$message1" https://ntfy.sh/jonahonions
+           fi
+         fi
+
+         echo "$find1" > slot1.txt
+
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
