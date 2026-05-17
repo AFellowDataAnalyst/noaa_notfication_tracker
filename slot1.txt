@@ -1,1 +1,1 @@
-"https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d06e5fee420815f62240806d9ff6370f4df2a2f9.001.1"
+"https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.59dc9a5c499cf09a90405d2d9a38ac02da8e6e1a.001.1"
