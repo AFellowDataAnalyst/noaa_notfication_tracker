@@ -12,7 +12,7 @@ jobs:
 
       - name: Noaa notification tracker
         run: |
-         alerts=$(curl -s -H "User-Agent: your-weather-bot" "https://api.weather.gov/alerts/active?area=VI")
+         alerts=$(curl -s -H "User-Agent: personalalertracker" "https://api.weather.gov/alerts/active?area=VI")
          current1=$(cat slot1.txt)
 
          find1=$(echo "$alerts" | jq ".features[0].id //empty")
